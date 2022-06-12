@@ -1,0 +1,62 @@
+{
+  "id": "dc573ee8-2574-4878-8b4b-61db4788b9cc",
+  "brand": "HP",
+  "name": "Pavilion",
+  "cpu": {
+    "brand": "AMD",
+    "name": "Ryzen 5 PRO 3500U",
+    "number_cores": 6,
+    "number_threads": 6,
+    "min_ghz": 3.4647648695959914,
+    "max_ghz": 4.083332111493797
+  },
+  "ram": {
+    "value": "44",
+    "uint": "GIGABYTE"
+  },
+  "gpus": [
+    {
+      "brand": "Nvidia",
+      "name": "RX Vega-56",
+      "min_ghz": 1.4366121379428465,
+      "max_ghz": 1.5865804001379626,
+      "memory": {
+        "value": "6",
+        "uint": "GIGABYTE"
+      }
+    }
+  ],
+  "storages": [
+    {
+      "driver": "SSD",
+      "memory": {
+        "value": "337",
+        "uint": "GIGABYTE"
+      }
+    },
+    {
+      "driver": "HDD",
+      "memory": {
+        "value": "6",
+        "uint": "TERABYTE"
+      }
+    }
+  ],
+  "screen": {
+    "size_inch": 15.478171,
+    "resolution": {
+      "width": 7219,
+      "height": 4061
+    },
+    "panel": "OLED",
+    "multitouch": true
+  },
+  "keyboard": {
+    "layout": "AZERTY",
+    "backlit": false
+  },
+  "weight_kg": 1.2289815217124633,
+  "price_usd": 1684.2759133179254,
+  "release_year": 2020,
+  "updated_at": "2022-06-12T05:16:16.716809Z"
+}

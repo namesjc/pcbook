@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/echo/Documents/learning/golang/pcbook'
+protoc -I proto --go_out=. --go_opt=module=github.com/namesjc/pcbook  --go-grpc_out=. --go-grpc_opt=module=github.com/namesjc/pcbook  proto/processer_message.proto
+make: Leaving directory `/Users/echo/Documents/learning/golang/pcbook'
+ 
