@@ -2,6 +2,7 @@ package service_test
 
 import (
 	"context"
+	"fmt"
 	"net"
 	"testing"
 
@@ -10,6 +11,7 @@ import (
 	"github.com/namesjc/pcbook/service"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 func TestClientCreateLaptop(t *testing.T) {
@@ -23,6 +25,7 @@ func TestClientCreateLaptop(t *testing.T) {
 	req := &pb.CreateLaptopRequest{
 		Laptop: laptop,
 	}
+	fmt.Println(req)
 
 	res, err := laptopClient.CreateLaptop(context.Background(), req)
 	require.NoError(t, err)
@@ -43,18 +46,20 @@ func startTestLaptopServer(t *testing.T) (*service.LaptopServer, string) {
 
 	grpcServer := grpc.NewServer()
 	pb.RegisterLaptopServiceServer(grpcServer, laptopServer)
+	// reflection.Register(grpcServer)
 
 	listener, err := net.Listen("tcp", ":0") // random available port
 	require.NoError(t, err)
 
-	go grpcServer.Serve(listener)
+	// go grpcServer.Serve(listener)
 
 	return laptopServer, listener.Addr().String()
 }
 
 func newTestLaptopClient(t *testing.T, serverAddress string) pb.LaptopServiceClient {
-	conn, err := grpc.Dial(serverAddress, grpc.WithInsecure())
+	conn, err := grpc.Dial(serverAddress, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	require.NoError(t, err)
+	// defer conn.Close()
 	return pb.NewLaptopServiceClient(conn)
 }
 

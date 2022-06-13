@@ -1,27 +1,27 @@
 {
-  "id": "dc573ee8-2574-4878-8b4b-61db4788b9cc",
-  "brand": "HP",
-  "name": "Pavilion",
+  "id": "a87615eb-bf75-4528-a843-196373e4b1dc",
+  "brand": "Apple",
+  "name": "Macbook Air",
   "cpu": {
     "brand": "AMD",
     "name": "Ryzen 5 PRO 3500U",
-    "number_cores": 6,
-    "number_threads": 6,
-    "min_ghz": 3.4647648695959914,
-    "max_ghz": 4.083332111493797
+    "number_cores": 2,
+    "number_threads": 10,
+    "min_ghz": 3.213229927003934,
+    "max_ghz": 4.435081246206325
   },
   "ram": {
-    "value": "44",
+    "value": "18",
     "uint": "GIGABYTE"
   },
   "gpus": [
     {
       "brand": "Nvidia",
       "name": "RX Vega-56",
-      "min_ghz": 1.4366121379428465,
-      "max_ghz": 1.5865804001379626,
+      "min_ghz": 1.133995539303224,
+      "max_ghz": 1.5721666996738037,
       "memory": {
-        "value": "6",
+        "value": "5",
         "uint": "GIGABYTE"
       }
     }
@@ -30,33 +30,33 @@
     {
       "driver": "SSD",
       "memory": {
-        "value": "337",
+        "value": "163",
         "uint": "GIGABYTE"
       }
     },
     {
       "driver": "HDD",
       "memory": {
-        "value": "6",
+        "value": "3",
         "uint": "TERABYTE"
       }
     }
   ],
   "screen": {
-    "size_inch": 15.478171,
+    "size_inch": 13.089314,
     "resolution": {
-      "width": 7219,
-      "height": 4061
+      "width": 3178,
+      "height": 1788
     },
-    "panel": "OLED",
+    "panel": "IPS",
     "multitouch": true
   },
   "keyboard": {
     "layout": "AZERTY",
     "backlit": false
   },
-  "weight_kg": 1.2289815217124633,
-  "price_usd": 1684.2759133179254,
-  "release_year": 2020,
-  "updated_at": "2022-06-12T05:16:16.716809Z"
+  "weight_kg": 1.9684249450464115,
+  "price_usd": 1717.3602149444612,
+  "release_year": 2018,
+  "updated_at": "2022-06-13T01:56:08.900156532Z"
 }
