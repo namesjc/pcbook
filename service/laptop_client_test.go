@@ -2,12 +2,12 @@ package service_test
 
 import (
 	"context"
-	"fmt"
 	"net"
 	"testing"
 
 	"github.com/namesjc/pcbook/pb"
 	"github.com/namesjc/pcbook/sample"
+	"github.com/namesjc/pcbook/serializer"
 	"github.com/namesjc/pcbook/service"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
@@ -25,7 +25,7 @@ func TestClientCreateLaptop(t *testing.T) {
 	req := &pb.CreateLaptopRequest{
 		Laptop: laptop,
 	}
-	fmt.Println(req)
+	// fmt.Println(req)
 
 	res, err := laptopClient.CreateLaptop(context.Background(), req)
 	require.NoError(t, err)
@@ -51,7 +51,7 @@ func startTestLaptopServer(t *testing.T) (*service.LaptopServer, string) {
 	listener, err := net.Listen("tcp", ":0") // random available port
 	require.NoError(t, err)
 
-	// go grpcServer.Serve(listener)
+	go grpcServer.Serve(listener)
 
 	return laptopServer, listener.Addr().String()
 }
@@ -64,5 +64,11 @@ func newTestLaptopClient(t *testing.T, serverAddress string) pb.LaptopServiceCli
 }
 
 func requireSameLaptop(t *testing.T, laptop1 *pb.Laptop, laptop2 *pb.Laptop) {
-	require.Equal(t, laptop1, laptop2)
+	json1, err := serializer.ProtobufToJson(laptop1)
+	require.NoError(t, err)
+
+	json2, err := serializer.ProtobufToJson(laptop2)
+	require.NoError(t, err)
+
+	require.Equal(t, json1, json2)
 }
